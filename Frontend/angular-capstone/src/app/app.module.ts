@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserPanelComponent } from './user-panel/user-panel.component';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,8 +25,10 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
-
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
