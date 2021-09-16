@@ -14,6 +14,8 @@ export class AdminDashboardComponent implements OnInit {
   update_mini_comp = false;
   view_mini_comp = false;
   confirm_add_mini_comp = false;
+  confirm_delete_mini_comp = false;
+  confirm_update_mini_comp = false;
 
   newProductRef = new FormGroup({
     productName: new FormControl(),
@@ -32,6 +34,8 @@ export class AdminDashboardComponent implements OnInit {
     this.update_mini_comp = false;
     this.view_mini_comp = false;
     this.confirm_add_mini_comp = false;
+    this.confirm_delete_mini_comp = false
+    this.confirm_update_mini_comp = false;
   }
 
   a_AddProducts(){
@@ -58,8 +62,14 @@ export class AdminDashboardComponent implements OnInit {
     this.set_minicomps_false();
     this.confirm_add_mini_comp = true;
   }
-  
 
-  
+  deleteProductInfo() {
+    this.set_minicomps_false();
+    this.confirm_delete_mini_comp = true;
+  }
 
+  updateProductInfo() {
+    this.set_minicomps_false();
+    this.confirm_update_mini_comp = true;
+  }
 }
