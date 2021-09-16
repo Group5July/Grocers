@@ -19,6 +19,15 @@
         <li class="nav-item">
             <a class="nav-link" href="javascript:;" (click) = "a_ViewRequests()">View Requests</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_AddEmployee()">Add Employee</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_DeleteEmployee()">Delete Employee</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_GenerateReport()">Generate Report</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -72,7 +81,47 @@
     	<p> Product updated </p><br/>
   	</div>
 <div *ngIf = "view_mini_comp">
-    <p>viewing</p>
+    <p>viewing requests</p>
 </div>
 
+<div *ngIf = "add_employee_mini_comp">
+    <p>Add Employee Here</p><br/>
+    <form [formGroup]="newEmployeeRef" (ngSubmit)="addEmployeeInfo()">
+            <label>Employee first name</label>
+            <input type="text" placeholder="Enter Employee First Name" formControlName="employeeFirstName" required/><br/>
+            <label>Employee last name</label>
+            <input type="text" placeholder="Enter Employee Last Name" formControlName="employeeLastName" required/><br/>
+            <label>Employee email</label>
+            <input type="text" placeholder="Enter Employee Email" formControlName="employeeEmail" required/><br/>
+            <label>Employee password</label>
+            <input type="text" placeholder="Enter Employee Password" formControlName="employeePassword" required/><br/>
+            <input type="submit" value="Submit"/>
+            <input type="reset" value="reset"/>
+    </form>
+</div>
+<div *ngIf = "confirm_add_employee">
+    <p>Employee Added</p>
+</div>
 
+<div *ngIf = "delete_employee_mini_comp">
+    <p>Delete Employee Here</p><br/>
+    <form [formGroup]="newEmployeeRef" (ngSubmit)="deleteEmployeeInfo()">
+            <label>Employee first name</label>
+            <input type="text" placeholder="Enter Employee First Name" formControlName="employeeFirstName" required/><br/>
+            <label>Employee last name</label>
+            <input type="text" placeholder="Enter Employee Last Name" formControlName="employeeLastName" required/><br/>
+            <label>Employee email</label>
+            <input type="text" placeholder="Enter Employee Email" formControlName="employeeEmail" required/><br/>
+            <label>Employee password</label>
+            <input type="text" placeholder="Enter Employee Password" formControlName="employeePassword" required/><br/>
+            <input type="submit" value="Submit"/>
+            <input type="reset" value="reset"/>
+    </form>
+</div>
+<div *ngIf = "confirm_delete_employee">
+    <p>Employee Deleted</p>
+</div>
+
+<div *ngIf = "report_mini_comp">
+    <p>Report goes here</p>
+</div>
