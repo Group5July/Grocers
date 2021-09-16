@@ -13,6 +13,7 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminDashboardComponent,
     UserPanelComponent,
     UserSigninComponent,
-    UserSignupComponent
+    UserSignupComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

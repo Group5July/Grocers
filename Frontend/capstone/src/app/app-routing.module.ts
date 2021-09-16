@@ -7,6 +7,7 @@ import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
+import { MainComponent} from './main/main.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:"user-signin",component:UserSigninComponent},
   {path:"user-signup",component:UserSignupComponent},
   {path:"user-panel",component:UserPanelComponent},
+  {path:"home",component:MainComponent},
   //{path:"employeelogout",component:DashboardComponent}, 
   //{path:"employeeDashboard",component:EmployeeDashboardComponent},
 
