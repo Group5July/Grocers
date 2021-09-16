@@ -1,1 +1,27 @@
-<p>employee-signin works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Login Page</h2>
+        <form [formGroup]="signinRef" (ngSubmit)="checkUser()">
+            <label>Employee ID:</label>
+            <input type="text" placeholder="Enter Employee ID" formControlName="employeeID" required/><br/>
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" formControlName="employeePassword" required/><br/>
+            <input type="submit" value="Sign In"/>
+            <input type="reset" value="reset"/>
+        </form>
+        <!-- <br/>
+        <a routerLink="/signin">Sign In</a>
+        <br/> -->
+        {{msg}}
+        
+    </div>
+</body>
+</html>
