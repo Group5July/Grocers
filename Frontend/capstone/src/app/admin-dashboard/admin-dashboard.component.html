@@ -40,11 +40,37 @@
     <p> Product added </p><br/>
   </div>
   <div *ngIf = "delete_mini_comp">
-    <p>deleting</p>
-</div>
+  	<p>Delete Product Here</p><br/>
+    <form [formGroup]="newProductRef" (ngSubmit)="deleteProductInfo()">
+            <label>Product name</label>
+            <input type="text" placeholder="Enter Product name" formControlName="productName" required/><br/>
+            <label>Product price</label>
+            <input type="text" placeholder="Enter Product price" formControlName="productPrice" required/><br/>
+            <label>Product quanitity</label>
+            <input type="number" placeholder="Enter Product quanitity" formControlName="productQuantity" required/><br/>
+            <input type="submit" value="Submit"/>
+            <input type="reset" value="reset"/>
+    </form>
+	</div>
+	<div *ngIf = "confirm_delete_mini_comp">
+    	<p> Product deleted </p><br/>
+  	</div>
 <div *ngIf = "update_mini_comp">
-    <p>unpdating</p>
+    <p>Update Product Here</p><br/>
+    <form [formGroup]="newProductRef" (ngSubmit)="updateProductInfo()">
+            <label>Product name</label>
+            <input type="text" placeholder="Enter Product name" formControlName="productName" required/><br/>
+            <label>Product price</label>
+            <input type="text" placeholder="Enter New Product price" formControlName="productPrice" required/><br/>
+            <label>Product quanitity</label>
+            <input type="number" placeholder="Enter New Product quanitity" formControlName="productQuantity" required/><br/>
+            <input type="submit" value="Submit"/>
+            <input type="reset" value="reset"/>
+    </form>
 </div>
+	<div *ngIf = "confirm_update_mini_comp">
+    	<p> Product updated </p><br/>
+  	</div>
 <div *ngIf = "view_mini_comp">
     <p>viewing</p>
 </div>
