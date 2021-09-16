@@ -38,11 +38,14 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   sendRequest(){
-    
     let requestInfo = this.requestRef.value;
     
     this.requestSer.sendRequestDetails(requestInfo).subscribe(result=>this.msg = result,error=>console.log(error));
     this.requestRef.reset();
+  }
+
+  updateEmployeeInfo(){
+    
   }
 
   e_update(){
