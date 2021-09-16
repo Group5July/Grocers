@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router'
 
 @Component({
@@ -12,8 +13,19 @@ export class EmployeeDashboardComponent implements OnInit {
   unlock_mini_comp = false;
   update_mini_comp = false;
   edit_mini_comp = false;
+
+  //Testing---
+  // product = {product_id:String
+  //   ,name:String, url:String}
+
+  // products = Array<product>;
+
+  requestRef = new FormGroup({
+    product_id:new FormControl()
+  })
   
   constructor(public activateRoute:ActivatedRoute,public router:Router) { } 
+  
 
   ngOnInit(): void {
   }
