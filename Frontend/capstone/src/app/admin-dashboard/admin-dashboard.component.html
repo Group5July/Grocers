@@ -1,0 +1,40 @@
+<p>Admin Dashboard</p>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style = "position: static;">
+    <!-- <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click)="a_AddProducts()">Add Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click) = "a_DeleteProducts()">Delete Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click) = "a_UpdateProducts()">Update Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_ViewRequests()">View Requests</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div *ngIf = "add_mini_comp">
+    <p>adding</p>
+
+  </div>
+  <div *ngIf = "delete_mini_comp">
+    <p>deleting</p>
+</div>
+<div *ngIf = "update_mini_comp">
+    <p>unlocking</p>
+</div>
+<div *ngIf = "view_mini_comp">
+    <p>viewing</p>
+</div>
+
+
