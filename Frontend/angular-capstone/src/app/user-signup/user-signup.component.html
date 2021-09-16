@@ -1,0 +1,29 @@
+<div class="user-signin" style=text-align:center>
+    <br/>
+    <h2>User SignUp</h2>
+    <form #loginRef="ngForm" (ngSubmit)="register(loginRef)">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput name="fname" ngModel/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput name="lname" ngModel/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>UserName</mat-label>
+            <input matInput name="user" ngModel/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput name="pass" ngModel/>
+        </mat-form-field>
+        <br/>
+        <button type="submit" mat-raised-button color="primary">Register</button>
+        <button type="reset" mat-raised-button color="info">Reset</button>
+    </form>
+    
+</div>
