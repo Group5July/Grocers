@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Signin } from './signin'; 
+import { EmployeeSignin } from './emplyeesignin'; 
 import { Observable } from 'rxjs'; 
 
 @Injectable({
@@ -10,12 +10,12 @@ export class AdminSigninService {
 
   constructor(public http:HttpClient) { }
 
-  checkLoginDetails(signin:Signin):Observable<any>{
+  checkLoginDetails(signin:EmployeeSignin):Observable<any>{
     return this.http.post("http://localhost:9090/api/user/signIn",signin,
     {responseType:'text'});
   }
 
-  loginAccountCreate(signin:Signin):Observable<any>{
+  loginAccountCreate(signin:EmployeeSignin):Observable<any>{
     return this.http.post("http://localhost:9090/api/user/signUp",signin,
     {responseType:'text'});
   }

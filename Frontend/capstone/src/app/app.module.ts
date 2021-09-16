@@ -7,8 +7,12 @@ import { EmployeeSigninComponent } from './employee-signin/employee-signin.compo
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { UserSigninComponent } from './user-signin/user-signin.component';
+import { UserSignupComponent } from './user-signup/user-signup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,18 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeSigninComponent,
     EmployeeDashboardComponent,
     AdminSigninComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    UserPanelComponent,
+    UserSigninComponent,
+    UserSignupComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

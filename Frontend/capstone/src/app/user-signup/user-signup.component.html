@@ -1,0 +1,21 @@
+<style>
+    .labelClass{
+        float: center;
+        width: 100px;
+    }
+</style>
+
+<div class="user-signup" style=text-align:center>
+    <br/>
+    <h2>User SignUp</h2><br/>
+    <form #loginRef="ngForm" (ngSubmit)="register(loginRef)">
+        <span class="labelClass">First Name: </span><input type="text" name="fname" ngModel><br/><br/>
+        <span class="labelClass">Last Name: </span><input type="text" name="lname" ngModel><br/><br/>
+        <span class="labelClass">User Name: </span><input type="text" name="user" ngModel><br/><br/>
+        <span class="labelClass">Password: </span><input type="password" name="pass" ngModel><br/><br/>
+        <br/>
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+</div>
