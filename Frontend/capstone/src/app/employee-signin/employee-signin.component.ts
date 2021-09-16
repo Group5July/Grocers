@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; //import
 import { EmployeeSigninService } from '../employee-signin.service';
 
 @Component({

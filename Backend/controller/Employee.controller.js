@@ -1,4 +1,4 @@
-let employeeModel = require("../model/employee.model"); //load 
+let employeeModel = require("../model/employee.model"); 
 
 let signUp = async (request,response)=> {
     let employee = request.body;    // receive the data from post method
