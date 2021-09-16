@@ -1,130 +1,42 @@
-<!Doctype HTML>
-<html>
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body>
-
-<div id="mySidenav" class="sidenav">
-    <p class="logo">User Panel</p>
-    <a href="#"class="icon-a"><i class="fa fa-shopping-bag icons"></i> &nbsp;&nbsp;Cart</a>
-    <a href="#"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Edit Profile</a>
-    <a href="#"class="icon-a"><i class="fa fa-tasks icons"></i> &nbsp;&nbsp;Fund</a>
-    <a href="#"class="icon-a"><i class="fa fa-list-alt icons"></i> &nbsp;&nbsp;Order Status</a>
-</div>
-
-
-<div id="main">
-	<div class="head">
-		<div class="col-div-6">
-            <span style="font-size:30px;cursor:pointer; color: white;" class="nav"  >&#9776; Dashboard</span>
-            <span style="font-size:30px;cursor:pointer; color: white;" class="nav2"  >&#9776; Dashboard</span>
-        </div>
-	<div class="col-div-6">
-	    <div class="profile">
-		    <p>User Name <span>User#1</span></p>
-	    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style = "position: static;">
+    <!-- <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click)="a_ViewCart()">View Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click) = "a_EditProfile()">Edit Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click) = "a_Fund()">Fund</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_OrderStatus()">Order Status</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_CheckOut()">Check Out</a>
+        </li>
+      </ul>
     </div>
-	<div class="clearfix"></div>
+  </nav>
+
+  <div *ngIf = "viewCart_mini_comp">
+    <p>view</p>
+
+  </div>
+  <div *ngIf = "editProfile_mini_comp">
+    <p>edit</p>
 </div>
-
-
-	<div class="clearfix"></div>
-	<br/>
-	
-	<div class="col-div-3">
-		<div class="box">
-			<p>67<br/><span>Item1</span></p>
-			<i class="fa fa-users box-icon"></i>
-		</div>
-	</div>
-	<div class="col-div-3">
-		<div class="box">
-			<p>88<br/><span>Item2</span></p>
-			<i class="fa fa-list box-icon"></i>
-		</div>
-	</div>
-	<div class="col-div-3">
-		<div class="box">
-			<p>99<br/><span>Item3</span></p>
-			<i class="fa fa-shopping-bag box-icon"></i>
-		</div>
-	</div>
-	<div class="col-div-3">
-		<div class="box">
-			<p>78<br/><span>Item4</span></p>
-			<i class="fa fa-tasks box-icon"></i>
-		</div>
-	</div>
-	<div class="clearfix"></div>
-	<br/><br/>
-	<div class="col-div-8">
-		<div class="box-8">
-		<div class="content-box">
-			<p>Order Status <span>View All</span></p>
-			<br/>
-			<table>
-                <tr>
-                    <th>Column1</th>
-                    <th>Column2</th>
-                    <th>Column3</th>
-                </tr>
-                <tr>
-                    <td>Row1</td>
-                    <td>Row1</td>
-                    <td>Row1</td>
-                </tr>
-                <tr>
-                    <td>Row2</td>
-                    <td>Row2</td>
-                    <td>Row2</td>
-                </tr>
-                <tr>
-                    <td>Row3</td>
-                    <td>Row3</td>
-                    <td>Row3</td>
-                </tr>
-                <tr>
-                    <td>Row4</td>
-                    <td>Row4</td>
-                    <td>Row4</td>
-                </tr>
-            </table>
-		</div>
-	</div>
-	</div>
+<div *ngIf = "fund_mini_comp">
+    <p>fund</p>
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-
-  $(".nav").click(function(){
-    $("#mySidenav").css('width','70px');
-    $("#main").css('margin-left','70px');
-    $(".logo").css('visibility', 'hidden');
-    $(".logo span").css('visibility', 'visible');
-     $(".logo span").css('margin-left', '-10px');
-     $(".icon-a").css('visibility', 'hidden');
-     $(".icons").css('visibility', 'visible');
-     $(".icons").css('margin-left', '-8px');
-      $(".nav").css('display','none');
-      $(".nav2").css('display','block');
-  });
-
-$(".nav2").click(function(){
-    $("#mySidenav").css('width','300px');
-    $("#main").css('margin-left','300px');
-    $(".logo").css('visibility', 'visible');
-     $(".icon-a").css('visibility', 'visible');
-     $(".icons").css('visibility', 'visible');
-     $(".nav").css('display','block');
-      $(".nav2").css('display','none');
- });
-
-</script>
-
-</body>
-
-</html>
+<div *ngIf = "orderStatus_mini_comp">
+    <p>status</p>
+</div>
+<div *ngIf = "checkOut_mini_comp">
+    <p>checkout</p>
+</div>
