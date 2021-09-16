@@ -8,8 +8,12 @@ import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},
   //{path:"employee-dashboard/:user", component:EmployeeDashboardComponent},
-  {path:"employee-dashboard", component:EmployeeDashboardComponent}, //for testing include /:user when you can
-  {path:"employeelogout",component:EmployeeSigninComponent}, //this will change once we know what's the main dashboard
+
+  {path:"employee-dashboard", component:EmployeeDashboardComponent}, //for testing
+  {path:"admin-dashboard", component:AdminDashboardComponent}, //for testing
+  {path:"admin-signin", component:AdminSigninComponent},
+  //{path:"employeelogout",component:DashboardComponent}, 
+  
   //{path:"employeeDashboard",component:EmployeeDashboardComponent},
   {path:"", redirectTo:"home", pathMatch:"prefix"} //empty val passed then goto login
   
