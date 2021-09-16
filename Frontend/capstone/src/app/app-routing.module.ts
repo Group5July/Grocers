@@ -20,6 +20,8 @@ const routes: Routes = [
   {path:"user-panel",component:UserPanelComponent},
   //{path:"employeelogout",component:DashboardComponent}, 
   //{path:"employeeDashboard",component:EmployeeDashboardComponent},
+
+  {path:"employeelogout",component:EmployeeSigninComponent},
   {path:"", redirectTo:"home", pathMatch:"prefix"} //empty val passed then goto login
   
 ];

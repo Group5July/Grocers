@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute,Router} from '@angular/router'
+import {ActivatedRoute,Router} from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,10 +13,25 @@ export class AdminDashboardComponent implements OnInit {
   delete_mini_comp = false;
   update_mini_comp = false;
   view_mini_comp = false;
+  confirm_add_mini_comp = false;
+
+  newProductRef = new FormGroup({
+    productName: new FormControl(),
+    productPrice: new FormControl(),
+    productQuantity : new FormControl()
+  });
   
   constructor(public activateRoute:ActivatedRoute,public router:Router) { } 
 
   ngOnInit(): void {
+  }
+
+  set_minicomps_false(){
+    this.add_mini_comp = false;
+    this.delete_mini_comp = false;
+    this.update_mini_comp = false;
+    this.view_mini_comp = false;
+    this.confirm_add_mini_comp = false;
   }
 
   a_AddProducts(){
@@ -37,13 +53,13 @@ export class AdminDashboardComponent implements OnInit {
     this.set_minicomps_false();
     this.view_mini_comp = true;
   }
+
+  storeProductInfo() {
+    this.set_minicomps_false();
+    this.confirm_add_mini_comp = true;
+  }
   
 
-  set_minicomps_false(){
-    this.add_mini_comp = false;
-    this.delete_mini_comp = false;
-    this.update_mini_comp = false;
-    this.view_mini_comp = false;
-  }
+  
 
 }

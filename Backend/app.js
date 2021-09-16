@@ -5,6 +5,7 @@ let mongoose = require("mongoose");
 let cors = require("cors");
 let employeeRouter = require("./router/employee.router");
 let adminRouter = require("./router/Admin.router")
+let requestRouter = require("./router/Requests.router");
 
 // create the reference of express 
 let app = express();
@@ -21,5 +22,6 @@ mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.l
 
 
 app.use("/api/employee",employeeRouter);
-app.use("/api/admin", adminRouter)
-app.listen(9090,()=>console.log("Server running on port number 9090"))
+app.use("/api/admin", adminRouter);
+app.use("/api/request",requestRouter);
+app.listen(9090,()=>console.log("Server running on port number 9090"));
