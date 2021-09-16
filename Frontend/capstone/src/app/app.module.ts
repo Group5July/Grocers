@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     EmployeeSigninComponent,
-    EmployeeDashboardComponent
+    EmployeeDashboardComponent,
     AdminSigninComponent,
     AdminDashboardComponent
   ],

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
-import { AdminDashboardComponent } from './admin-dashboard/employee-dashboard.component';
-import { AdminSigninComponent } from './admin-signin/employee-signin.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},

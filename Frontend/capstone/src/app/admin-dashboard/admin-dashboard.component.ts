@@ -33,7 +33,7 @@ export class AdminDashboardComponent implements OnInit {
     this.update_mini_comp = true;
   }
   
-  a_viewProducts(){
+  a_ViewRequests(){
     this.set_minicomps_false();
     this.view_mini_comp = true;
   }
