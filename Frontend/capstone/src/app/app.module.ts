@@ -9,9 +9,6 @@ import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
@@ -34,9 +31,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
     BrowserAnimationsModule,
   ],
   providers: [],
