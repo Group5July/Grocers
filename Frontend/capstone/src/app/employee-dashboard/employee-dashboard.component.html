@@ -48,13 +48,15 @@
 
       <div *ngIf="send_mini_comp">
         <p style="font-style: italic; margin-top: 10%">
-          Please copy and paste the product id that you'd like Admin to update.
+          Please, write your name and copy and paste the product id that you'd like Admin to update.
         </p>
-
-        <form [formGroup]="requestRef" style="margin-bottom: 30px">
+        <form [formGroup]="requestRef" style="margin-bottom: 30px" (change) = "clear_msg()">
+          <label for="">Employee Name: </label>
+          <input type="text" formControlName="employee_name" required style = "margin-right:3px"/>
           <label for="">Product Id: </label>
-          <input type="text" formControlName="product_id" />
-          <input type="submit" value="Send" />
+          <input type="text" formControlName="product_id" required  style = "margin-right:3px"/>
+          <input type="submit" value="Send" (click) = "sendRequest()"/> 
+          <span style = "color:blue">{{msg}}</span>
         </form>
         <table class="table" style="margin-top: 1%">
           <thead class="thead-light">
@@ -95,12 +97,13 @@
       </div>
       <div *ngIf="update_mini_comp">
         <p style="font-style: italic; margin-top: 10%">
-            Please copy and paste the product id that you'd like Admin to update.
+            Please...
           </p>
   
           <form [formGroup]="requestRef" style="margin-bottom: 30px">
             <label for="">Product Id: </label>
-            <input type="text" formControlName="product_id" />
+            <input type="text" formControlName="product_id" required/>
+            <input type="text" formControlName="employee_id" required/>
             <input type="submit" value="Send" />
           </form>
           <table class="table" style="margin-top: 1%">

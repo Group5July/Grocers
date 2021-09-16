@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router'
+import { RequestService } from '../request.service';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -14,25 +15,34 @@ export class EmployeeDashboardComponent implements OnInit {
   update_mini_comp = false;
   edit_mini_comp = false;
 
-  //Testing---
-  // product = {product_id:String
-  //   ,name:String, url:String}
-
-  // products = Array<product>;
+  msg?:string;
 
   requestRef = new FormGroup({
-    product_id:new FormControl()
+    product_id:new FormControl(),
+    employee_name:new FormControl()
   })
   
-  constructor(public activateRoute:ActivatedRoute,public router:Router) { } 
+  constructor(public activateRoute:ActivatedRoute,public router:Router,public requestSer:RequestService) { } 
   
 
   ngOnInit(): void {
   }
 
+  //this is to manipulate the *ngIfs
   e_send(){
     this.set_minicomps_false();
     this.send_mini_comp = true;
+  
+    //let requestInfo = this.requestRef.value;
+    
+  }
+
+  sendRequest(){
+    
+    let requestInfo = this.requestRef.value;
+    
+    this.requestSer.sendRequestDetails(requestInfo).subscribe(result=>this.msg = result,error=>console.log(error));
+    this.requestRef.reset();
   }
 
   e_update(){
@@ -52,6 +62,10 @@ export class EmployeeDashboardComponent implements OnInit {
   
   e_logout(){
     this.router.navigate(["employeelogout"])
+  }
+
+  clear_msg(){
+    this.msg = "";
   }
 
   set_minicomps_false(){
