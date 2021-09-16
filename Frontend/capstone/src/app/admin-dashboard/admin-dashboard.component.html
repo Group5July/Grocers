@@ -24,14 +24,26 @@
   </nav>
 
   <div *ngIf = "add_mini_comp">
-    <p>adding</p>
-
+    <p>Add Product Here</p><br/>
+    <form [formGroup]="newProductRef" (ngSubmit)="storeProductInfo()">
+            <label>Product name</label>
+            <input type="text" placeholder="Enter Product name" formControlName="productName" required/><br/>
+            <label>Product price</label>
+            <input type="text" placeholder="Enter Product price" formControlName="productPrice" required/><br/>
+            <label>Product quanitity</label>
+            <input type="number" placeholder="Enter Product quanitity" formControlName="productQuantity" required/><br/>
+            <input type="submit" value="Submit"/>
+            <input type="reset" value="reset"/>
+    </form>
+  </div>
+  <div *ngIf = "confirm_add_mini_comp">
+    <p> Product added </p><br/>
   </div>
   <div *ngIf = "delete_mini_comp">
     <p>deleting</p>
 </div>
 <div *ngIf = "update_mini_comp">
-    <p>unlocking</p>
+    <p>unpdating</p>
 </div>
 <div *ngIf = "view_mini_comp">
     <p>viewing</p>
