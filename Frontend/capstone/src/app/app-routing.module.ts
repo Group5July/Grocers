@@ -12,16 +12,15 @@ import { MainComponent} from './main/main.component';
 
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},
-  //{path:"employee-dashboard/:user", component:EmployeeDashboardComponent},
   {path:"employee-dashboard", component:EmployeeDashboardComponent}, //for testing
   {path:"admin-dashboard", component:AdminDashboardComponent}, //for testing
   {path:"admin-signin", component:AdminSigninComponent},
   {path:"user-signin",component:UserSigninComponent},
   {path:"user-signup",component:UserSignupComponent},
+  {path:"employee-signin",component:EmployeeSigninComponent},
   {path:"user-panel",component:UserPanelComponent},
   {path:"home",component:MainComponent},
-  //{path:"employeelogout",component:DashboardComponent}, 
-  //{path:"employeeDashboard",component:EmployeeDashboardComponent},
+  {path:"employeeDashboard",component:EmployeeDashboardComponent},
 
   {path:"employeelogout",component:EmployeeSigninComponent},
   {path:"", redirectTo:"home", pathMatch:"prefix"} //empty val passed then goto login
