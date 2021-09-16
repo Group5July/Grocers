@@ -13,6 +13,8 @@ const routes: Routes = [
   {path:"admin-signin", component:AdminSigninComponent},
   //{path:"employeelogout",component:DashboardComponent}, 
   //{path:"employeeDashboard",component:EmployeeDashboardComponent},
+
+  {path:"employeelogout",component:EmployeeSigninComponent},
   {path:"", redirectTo:"home", pathMatch:"prefix"} //empty val passed then goto login
   
 ];
