@@ -16,7 +16,6 @@ const routes: Routes = [
 
   {path:"employeelogout",component:EmployeeSigninComponent},
   {path:"", redirectTo:"home", pathMatch:"prefix"} //empty val passed then goto login
-  
 ];
 
 @NgModule({
