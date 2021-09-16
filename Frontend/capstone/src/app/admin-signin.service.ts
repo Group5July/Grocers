@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeSigninService {
+export class AdminSigninService {
 
   constructor(public http:HttpClient) { }
 
