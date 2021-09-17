@@ -1,5 +1,5 @@
 const { response } = require("express");
-let orderModel = require("../model/order.model");
+let orderModel = require("../model/Orders.model");
 
 
 //insert data

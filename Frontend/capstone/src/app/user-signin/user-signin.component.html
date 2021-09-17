@@ -1,19 +1,21 @@
-<style>
-    .labelClass{
-        float: center;
-        width: 100px;
-    }
-</style>
-
 <div class="user-signin" style=text-align:center>
     <br/>
-    <h2>User Signin</h2><br/>
+    <h1>User Signin</h1><br/>
     <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
         <span class="labelClass">User Name: </span><input type="text" name="user" ngModel><br/><br/>
         <span class="labelClass">Password: </span><input type="password" name="pass" ngModel><br/><br/>
         <br/>
-        <button type="submit">Sign In</button>
-        <button type="reset">Reset</button>
+
+
+        <button class="btn btn-sm user" type="submit">Sign In</button>
+        <button class="btn btn-sm user" type="reset">Reset</button>
     </form>
-    
+    <div>
+        <!-- <a routerLink= "user-signin">Signin</a> -->
+        <div class="d-grid gap-3 col-6 mx-auto center">
+            <button class="btn btn-sm user" [routerLink]="['/user-signup']">Sign Up</button>
+            <!-- <button class="btn btn-lg user" [routerLink]="['/user-sign-in']">Sign In</button> -->
+            <!-- <button class="btn btn-lg user" [routerLink]="['/user-raise-ticket']">Raise Ticket</button> -->
+        </div>
+    </div>
 </div>
