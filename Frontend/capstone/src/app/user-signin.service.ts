@@ -10,8 +10,8 @@ export class UserSigninService {
 
   constructor(public http:HttpClient) { }
 
-  checkUserInfo():Observable<Signin[]>{
-    return this.http.get<Signin[]>("/assets/user-login.json");
+  checkUserInfo(loginCheck:Signin):Observable<any>{
+    return this.http.post("http://locolhost:9090/api/user/signIn", loginCheck,{responseType:'text'}) ;
   }
 
 }

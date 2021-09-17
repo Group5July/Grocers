@@ -1,4 +1,3 @@
-<p>Admin Dashboard</p>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style = "position: static;">
     <!-- <a class="navbar-brand" href="#">Navbar</a>
@@ -19,60 +18,141 @@
         <li class="nav-item">
             <a class="nav-link" href="javascript:;" (click) = "a_ViewRequests()">View Requests</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_AddEmployee()">Add Employee</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_DeleteEmployee()">Delete Employee</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:;" (click) = "a_GenerateReport()">Generate Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click)="a_logout()">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <div *ngIf = "add_mini_comp">
-    <p>Add Product Here</p><br/>
+  <div style="margin-left:42%; margin-top: 3%" *ngIf = "add_mini_comp">
+    <h1>Add Product Here</h1><br/>
     <form [formGroup]="newProductRef" (ngSubmit)="storeProductInfo()">
-            <label>Product name</label>
+            <!-- <label>Product name</label>
             <input type="text" placeholder="Enter Product name" formControlName="productName" required/><br/>
             <label>Product price</label>
             <input type="text" placeholder="Enter Product price" formControlName="productPrice" required/><br/>
             <label>Product quanitity</label>
             <input type="number" placeholder="Enter Product quanitity" formControlName="productQuantity" required/><br/>
             <input type="submit" value="Submit"/>
-            <input type="reset" value="reset"/>
+            <input type="reset" value="reset"/> -->
+            
+            <span class="labelClass">Product Name:</span><input type="text" formControlName="productName" required><br/><br/>
+            <span class="labelClass">Product Price:</span><input type="text" formControlName="productPrice" required><br/><br/>
+            <span class="labelClass">Product quantity:</span><input type="text" formControlName="productQuantity" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
     </form>
   </div>
   <div *ngIf = "confirm_add_mini_comp">
     <p> Product added </p><br/>
   </div>
-  <div *ngIf = "delete_mini_comp">
-  	<p>Delete Product Here</p><br/>
+  <div style="margin-left:42%; margin-top: 3%" *ngIf = "delete_mini_comp">
+  	<h1>Delete Product Here</h1><br/>
     <form [formGroup]="newProductRef" (ngSubmit)="deleteProductInfo()">
-            <label>Product name</label>
+            <!-- <label>Product name</label>
             <input type="text" placeholder="Enter Product name" formControlName="productName" required/><br/>
             <label>Product price</label>
             <input type="text" placeholder="Enter Product price" formControlName="productPrice" required/><br/>
             <label>Product quanitity</label>
             <input type="number" placeholder="Enter Product quanitity" formControlName="productQuantity" required/><br/>
             <input type="submit" value="Submit"/>
-            <input type="reset" value="reset"/>
+            <input type="reset" value="reset"/> -->
+            <span class="labelClass">Product Name:</span><input type="text" formControlName="productName" required><br/><br/>
+            <span class="labelClass">Product Price:</span><input type="text" formControlName="productPrice" required><br/><br/>
+            <span class="labelClass">Product quantity:</span><input type="text" formControlName="productQuantity" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
     </form>
 	</div>
 	<div *ngIf = "confirm_delete_mini_comp">
     	<p> Product deleted </p><br/>
   	</div>
-<div *ngIf = "update_mini_comp">
-    <p>Update Product Here</p><br/>
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "update_mini_comp">
+    <h1>Update Product Here</h1><br/>
     <form [formGroup]="newProductRef" (ngSubmit)="updateProductInfo()">
-            <label>Product name</label>
+            <!-- <label>Product name</label>
             <input type="text" placeholder="Enter Product name" formControlName="productName" required/><br/>
             <label>Product price</label>
             <input type="text" placeholder="Enter New Product price" formControlName="productPrice" required/><br/>
             <label>Product quanitity</label>
             <input type="number" placeholder="Enter New Product quanitity" formControlName="productQuantity" required/><br/>
             <input type="submit" value="Submit"/>
-            <input type="reset" value="reset"/>
+            <input type="reset" value="reset"/> -->
+            <span class="labelClass">New Product Name:</span><input type="text" formControlName="productName" required><br/><br/>
+            <span class="labelClass">New Product Price:</span><input type="text" formControlName="productPrice" required><br/><br/>
+            <span class="labelClass">New Product quantity:</span><input type="text" formControlName="productQuantity" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
     </form>
 </div>
-	<div *ngIf = "confirm_update_mini_comp">
-    	<p> Product updated </p><br/>
+	<div style="margin-left:42%; margin-top: 3%" *ngIf = "confirm_update_mini_comp">
+    	<h1> Product updated </h1><br/>
   	</div>
-<div *ngIf = "view_mini_comp">
-    <p>viewing</p>
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "view_mini_comp">
+    <h1>viewing requests from employee</h1><br/>
+    
+</div>
+
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "add_employee_mini_comp">
+    <h1>Add Employee Here</h1><br/>
+    <form [formGroup]="newEmployeeRef" (ngSubmit)="addEmployeeInfo()">
+
+            <span class="labelClass">First Name:</span><input type="text" formControlName="employeeFirstName" required><br/><br/>
+            <span class="labelClass">Last Name:</span><input type="text" formControlName="employeeLastName" required><br/><br/>
+            <span class="labelClass">Email:</span><input type="text" formControlName="employeeEmail" required><br/><br/>
+            <span class="labelClass">Password:</span><input type="password" formControlName="employeePassword" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
+    </form>
+</div>
+<div *ngIf = "confirm_add_employee">
+    <p>Employee Added</p>
+</div>
+
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "delete_employee_mini_comp">
+  <h1>Delete Employee Here</h1><br/>
+    <form [formGroup]="newEmployeeRef" (ngSubmit)="deleteEmployeeInfo()">
+            <span class="labelClass">First Name:</span><input type="text" formControlName="employeeFirstName" required><br/><br/>
+            <span class="labelClass">Last Name:</span><input type="text" formControlName="employeeLastName" required><br/><br/>
+            <span class="labelClass">Email:</span><input type="text" formControlName="employeeEmail" required><br/><br/>
+            <span class="labelClass">Password:</span><input type="password" formControlName="employeePassword" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
+    </form>
+</div>
+<div *ngIf = "confirm_delete_employee">
+    <p>Employee Deleted</p>
+</div>
+
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "report_mini_comp">
+  <h1>Generate Report Here</h1><br/>
+    <form [formGroup]="newEmployeeRef" (ngSubmit)="leaveReport()">
+      <span class="labelClass">Report: </span><textarea type="text" formControlName="generateReport" required></textarea><br/><br/>
+      <input class="b1" type="submit" value="Submit"/>
+      <input class="b1" type="reset" value="Reset"/>
+    </form>
+</div>
+<div *ngIf = "confirm_report">
+  <p>Message Reported</p>
 </div>
 
 
+<style>
+  .labelClass{
+      float: left;
+      width: 100px;
+  }
+  .b1{
+      margin-left:50px;
+  }
+</style>

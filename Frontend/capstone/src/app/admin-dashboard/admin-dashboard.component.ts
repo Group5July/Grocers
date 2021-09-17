@@ -13,15 +13,30 @@ export class AdminDashboardComponent implements OnInit {
   delete_mini_comp = false;
   update_mini_comp = false;
   view_mini_comp = false;
+  add_employee_mini_comp = false;
+  delete_employee_mini_comp = false;
+  report_mini_comp = false;
   confirm_add_mini_comp = false;
   confirm_delete_mini_comp = false;
   confirm_update_mini_comp = false;
+  confirm_add_employee = false;
+  confirm_delete_employee = false;
+  confirm_report = false;
 
   newProductRef = new FormGroup({
     productName: new FormControl(),
     productPrice: new FormControl(),
     productQuantity : new FormControl()
   });
+
+  newEmployeeRef = new FormGroup({
+    employeeFirstName: new FormControl(),
+    employeeLastName: new FormControl(),
+    employeeEmail : new FormControl(),
+    employeePassword : new FormControl(),
+    generateReport : new FormControl()
+  });
+
   
   constructor(public activateRoute:ActivatedRoute,public router:Router) { } 
 
@@ -33,9 +48,15 @@ export class AdminDashboardComponent implements OnInit {
     this.delete_mini_comp = false;
     this.update_mini_comp = false;
     this.view_mini_comp = false;
+    this.add_employee_mini_comp = false;
+    this.delete_employee_mini_comp = false;
+    this.report_mini_comp = false;
     this.confirm_add_mini_comp = false;
     this.confirm_delete_mini_comp = false
     this.confirm_update_mini_comp = false;
+    this.confirm_add_employee = false;
+    this.confirm_delete_employee = false;
+    this.confirm_report = false;
   }
 
   a_AddProducts(){
@@ -58,6 +79,25 @@ export class AdminDashboardComponent implements OnInit {
     this.view_mini_comp = true;
   }
 
+  a_AddEmployee(){
+    this.set_minicomps_false();
+    this.add_employee_mini_comp = true;
+  }
+
+  a_DeleteEmployee(){
+    this.set_minicomps_false();
+    this.delete_employee_mini_comp = true;
+  }
+
+  a_GenerateReport(){
+    this.set_minicomps_false();
+    this.report_mini_comp = true;
+  }
+
+  a_logout(){
+    this.router.navigate(["admin-signin"])
+  }
+
   storeProductInfo() {
     this.set_minicomps_false();
     this.confirm_add_mini_comp = true;
@@ -72,4 +112,20 @@ export class AdminDashboardComponent implements OnInit {
     this.set_minicomps_false();
     this.confirm_update_mini_comp = true;
   }
+
+  addEmployeeInfo() {
+    this.set_minicomps_false();
+    this.confirm_add_employee = true;
+  }
+
+  deleteEmployeeInfo() {
+    this.set_minicomps_false();
+    this.confirm_delete_employee = true;
+  }
+
+  leaveReport() {
+    this.set_minicomps_false();
+    this.confirm_report = true;
+  }
+
 }
