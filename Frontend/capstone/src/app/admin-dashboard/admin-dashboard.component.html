@@ -28,6 +28,9 @@
         <li class="nav-item">
             <a class="nav-link" href="javascript:;" (click) = "a_GenerateReport()">Generate Report</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" (click)="a_logout()">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -84,44 +87,56 @@
     <p>viewing requests</p>
 </div>
 
-<div *ngIf = "add_employee_mini_comp">
-    <p>Add Employee Here</p><br/>
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "add_employee_mini_comp">
+    <p><b>Add Employee Here</b></p><br/>
     <form [formGroup]="newEmployeeRef" (ngSubmit)="addEmployeeInfo()">
-            <label>Employee first name</label>
-            <input type="text" placeholder="Enter Employee First Name" formControlName="employeeFirstName" required/><br/>
-            <label>Employee last name</label>
-            <input type="text" placeholder="Enter Employee Last Name" formControlName="employeeLastName" required/><br/>
-            <label>Employee email</label>
-            <input type="text" placeholder="Enter Employee Email" formControlName="employeeEmail" required/><br/>
-            <label>Employee password</label>
-            <input type="text" placeholder="Enter Employee Password" formControlName="employeePassword" required/><br/>
-            <input type="submit" value="Submit"/>
-            <input type="reset" value="reset"/>
+
+            <span class="labelClass">First Name:</span><input type="text" formControlName="employeeFirstName" required><br/><br/>
+            <span class="labelClass">Last Name:</span><input type="text" formControlName="employeeLastName" required><br/><br/>
+            <span class="labelClass">Email:</span><input type="text" formControlName="employeeEmail" required><br/><br/>
+            <span class="labelClass">Password:</span><input type="password" formControlName="employeePassword" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
     </form>
 </div>
 <div *ngIf = "confirm_add_employee">
     <p>Employee Added</p>
 </div>
 
-<div *ngIf = "delete_employee_mini_comp">
-    <p>Delete Employee Here</p><br/>
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "delete_employee_mini_comp">
+  <p><b>Delete Employee Here</b></p><br/>
     <form [formGroup]="newEmployeeRef" (ngSubmit)="deleteEmployeeInfo()">
-            <label>Employee first name</label>
-            <input type="text" placeholder="Enter Employee First Name" formControlName="employeeFirstName" required/><br/>
-            <label>Employee last name</label>
-            <input type="text" placeholder="Enter Employee Last Name" formControlName="employeeLastName" required/><br/>
-            <label>Employee email</label>
-            <input type="text" placeholder="Enter Employee Email" formControlName="employeeEmail" required/><br/>
-            <label>Employee password</label>
-            <input type="text" placeholder="Enter Employee Password" formControlName="employeePassword" required/><br/>
-            <input type="submit" value="Submit"/>
-            <input type="reset" value="reset"/>
+            <span class="labelClass">First Name:</span><input type="text" formControlName="employeeFirstName" required><br/><br/>
+            <span class="labelClass">Last Name:</span><input type="text" formControlName="employeeLastName" required><br/><br/>
+            <span class="labelClass">Email:</span><input type="text" formControlName="employeeEmail" required><br/><br/>
+            <span class="labelClass">Password:</span><input type="password" formControlName="employeePassword" required><br/><br/>
+            <input class="b1" type="submit" value="Submit"/>
+            <input class="b1" type="reset" value="Reset"/>
     </form>
 </div>
 <div *ngIf = "confirm_delete_employee">
     <p>Employee Deleted</p>
 </div>
 
-<div *ngIf = "report_mini_comp">
-    <p>Report goes here</p>
+<div style="margin-left:42%; margin-top: 3%" *ngIf = "report_mini_comp">
+  <p><b>Generate Report Here</b></p><br/>
+    <form [formGroup]="newEmployeeRef" (ngSubmit)="leaveReport()">
+      <span class="labelClass">Report: </span><textarea type="text" formControlName="generateReport" required></textarea><br/><br/>
+      <input class="b1" type="submit" value="Submit"/>
+      <input class="b1" type="reset" value="Reset"/>
+    </form>
 </div>
+<div *ngIf = "confirm_report">
+  <p>Message Reported</p>
+</div>
+
+
+<style>
+  .labelClass{
+      float: left;
+      width: 100px;
+  }
+  .b1{
+      margin-left:50px;
+  }
+</style>

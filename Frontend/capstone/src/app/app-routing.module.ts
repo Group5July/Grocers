@@ -12,8 +12,8 @@ import { MainComponent} from './main/main.component';
 
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},
-  {path:"employee-dashboard", component:EmployeeDashboardComponent}, //for testing
-  {path:"admin-dashboard", component:AdminDashboardComponent}, //for testing
+  {path:"employee-dashboard", component:EmployeeDashboardComponent}, 
+  {path:"admin-dashboard", component:AdminDashboardComponent}, 
   {path:"admin-signin", component:AdminSigninComponent},
   {path:"user-signin",component:UserSigninComponent},
   {path:"user-signup",component:UserSignupComponent},

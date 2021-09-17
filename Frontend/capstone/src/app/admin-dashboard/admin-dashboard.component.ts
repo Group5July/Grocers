@@ -34,6 +34,7 @@ export class AdminDashboardComponent implements OnInit {
     employeeLastName: new FormControl(),
     employeeEmail : new FormControl(),
     employeePassword : new FormControl(),
+    generateReport : new FormControl()
   });
 
   
@@ -91,6 +92,10 @@ export class AdminDashboardComponent implements OnInit {
   a_GenerateReport(){
     this.set_minicomps_false();
     this.report_mini_comp = true;
+  }
+
+  a_logout(){
+    this.router.navigate(["admin-signin"])
   }
 
   storeProductInfo() {
