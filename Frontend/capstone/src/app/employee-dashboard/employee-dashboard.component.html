@@ -191,7 +191,7 @@
           </table>
       </div>
       <div *ngIf="edit_mini_comp">
-        <form [formGroup] = "updateDeRef" (ngSubmit) = "updateProfile()">
+        <form [formGroup] = "updateDeRef" (ngSubmit) = "updateProfile()" style = "margin-top:10%">
             <label style = "font-weight: bold;">Name: </label><span>{{e_firstn}}{{e_lastn}}</span><br/>
             <label style = "font-weight: bold;">EmployeeID: </label><span>{{e_id}}</span><br/>
             <label style = "font-weight: bold;">Email: </label><span>{{e_email}}</span>
