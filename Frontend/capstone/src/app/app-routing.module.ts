@@ -8,7 +8,7 @@ import { UserSigninComponent } from './user-signin/user-signin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { MainComponent} from './main/main.component';
-
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},
@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:"user-panel",component:UserPanelComponent},
   {path:"home",component:MainComponent},
   {path:"employeeDashboard",component:EmployeeDashboardComponent},
-
+  {path:"userDashboard",component:UserDashboardComponent},
   {path:"employeelogout",component:EmployeeSigninComponent},
   {path:"", redirectTo:"home", pathMatch:"prefix"} //empty val passed then goto login
 ];

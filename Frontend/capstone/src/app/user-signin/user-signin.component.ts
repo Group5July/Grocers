@@ -17,26 +17,29 @@ export class UserSigninComponent implements OnInit {
     
   ngOnInit(): void {
   }
-
+  flag :Number=0;
+  msgerror?:string;
   msg?:string=""
   checkUser(loginRef:NgForm){
     let login = loginRef.value;
     let flag = 0;
-    this.loginSer.checkUserInfo().subscribe(result=> {
-      for(let ll of result){
-        if(ll.user == login.user && ll.pass == login.pass){
+    this.loginSer.checkUserInfo(login).subscribe(result=> {
+      
+        if(result == "Success"){
           flag++;
           this.router.navigate(["user-panel"/*, login.user*/]);
         }
-      }
-        if(flag>0){
-          this.msg="Successfully login"
-        }
         else{
           this.msg="Failure login"
+          flag+=1;
+          if(flag == 3){
+            this.msgerror="Account locked"
+          }
+
         }
-    });
-    flag = 0;
+      },
+      error=>console.log(error)
+    )
   }
 
 }

@@ -15,4 +15,4 @@ let OrderSchema = mongoose.Schema({
 
 let OrderModel = mongoose.model("order", OrderSchema);
 
-module.exports = cartModel;
+module.exports = OrderModel;
