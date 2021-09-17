@@ -12,8 +12,10 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},
-  {path:"employee-dashboard", component:EmployeeDashboardComponent}, 
+
+  {path:"employee-dashboard/:employeeID", component:EmployeeDashboardComponent},
   {path:"admin-dashboard", component:AdminDashboardComponent}, 
+
   {path:"admin-signin", component:AdminSigninComponent},
   {path:"user-signin",component:UserSigninComponent},
   {path:"user-signup",component:UserSignupComponent},

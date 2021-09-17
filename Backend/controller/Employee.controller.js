@@ -19,4 +19,28 @@ let signIn = async (request,response)=> {
         response.send("InValid username or password");
     }
 }
-module.exports={signIn,signUp}
+
+let updateEmployeeDetails = (request,response)=> {
+    let employee = request.body;
+    productModel.updateOne({_id:employee._id},{$set:{employeePassword:employee.employeePassword,emailID:employee.emailID}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
+
+let getEmployeeInfo = (request,response)=>{
+    let temp_employee = request.body;
+    employeeModel.find({employeeID: temp_employee.employeeID},(err,data)=>{
+      
+        if(!err){
+            response.json(data);
+        }else{
+            response.json(err);
+        }
+    })
+}
+
+module.exports={signIn,signUp,updateEmployeeDetails,getEmployeeInfo}
