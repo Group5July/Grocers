@@ -140,10 +140,10 @@ export class EmployeeDashboardComponent implements OnInit {
       // this.e_lastn = data.lastName;
       // this.e_firstn = data.firstName;
       // this.e_password = data.employeePassword;
-      let first_string = data;
+      let first_string = data[0];
       console.log(typeof(first_string)+ "type");
-      let found_emp = JSON.parse(first_string.slice(1,-1));
-      console.log(found_emp+ "value");
+      //let found_emp = JSON.parse(first_string.slice(1,-1));
+      console.log(first_string+ "value");
       // this.e_lastn = found_emp.lastName;
       // this.e_firstn = found_emp.firstName;
       // this.e_password = found_emp.employeePassword;
