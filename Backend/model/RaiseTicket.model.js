@@ -9,6 +9,6 @@ let raiseTicketSchema = mongoose.Schema({
   
 });
 
-let raiseTicketModel = mongoose.model("user", raiseTicketSchema);
+let raiseTicketModel = mongoose.model("raiseTicket", raiseTicketSchema);
 
 module.exports = raiseTicketModel;
