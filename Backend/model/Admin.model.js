@@ -3,8 +3,8 @@ let mongoose = require("mongoose");
 mongoose.pluralize(null);
 
 let adminSchema = mongoose.Schema({
-    adminUsername:{type:String,unique:true},
-    employeePassword:{type:String}
+    username:{type:String,required:true},
+    password:{type:String, required:true}
 });
 
 let adminModel = mongoose.model("Admin",adminSchema);

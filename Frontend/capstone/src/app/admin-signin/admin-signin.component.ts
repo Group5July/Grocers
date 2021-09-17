@@ -10,30 +10,30 @@ import { AdminSigninService } from '../admin-signin.service';
   styleUrls: ['./admin-signin.component.css']
 })
 export class AdminSigninComponent implements OnInit {
+  msg?:string ='';
 
   signinRef = new FormGroup({
-    adminID: new FormControl(),
-    adminePassword: new FormControl()
+    username: new FormControl(),
+    password: new FormControl()
   });
 
   constructor(public signinSer: AdminSigninService, public router:Router) { }
-  msg?:string;
   ngOnInit(): void {
   }
 
-  checkUser() {
+  checkAdmin(){
     let login = this.signinRef.value;
-    this.signinSer.checkLoginDetails(login).
-    subscribe(result=>{
-      if(result=="Success"){
-        //this.router.navigate(["home",login.email]);
-        this.router.navigate(["admin-dashboard"/*,login.email*/])
-      }else {
-          this.msg = result;
+
+    this.signinSer.checkLoginDetails(login).subscribe(result=>{
+      
+      if (result=="found"){
+        this.router.navigate(['admin-dashboard', login.username]);
       }
-    },
-    error=>console.log(error));
-    this.signinRef.reset();
+      else {
+        this.msg = 'Invalid credentials. Please try again.'
+      }
+    });
   }
+
 
 }

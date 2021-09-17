@@ -1,17 +1,12 @@
-
-
     <div class="admin-signin" style=text-align:center>
         <h1>Admin Sign-in</h1>
-        <form [formGroup]="signinRef" (ngSubmit)="checkUser()">
-            <label>Admin ID:</label>
-            <input type="text" placeholder="Enter Admin ID" formControlName="adminID" required/><br/>
+        <form [formGroup]="signinRef" (ngSubmit)="checkAdmin()">
+            <label>Admin Username:</label>
+            <input type="text" placeholder="Enter Admin username " formControlName="username" required/><br/>
             <label>Password</label>
-            <input type="password" placeholder="Enter Password" formControlName="adminPassword" required/><br/>
+            <input type="password" placeholder="Enter Password" formControlName="password" required/><br/>
             <input type="submit" value="Sign In"/>
             <input type="reset" value="reset"/>
         </form>
-        <!-- <br/>
-        <a routerLink="/signin">Sign In</a>
-        <br/> -->
         {{msg}}
     </div>
