@@ -191,8 +191,15 @@
           </table>
       </div>
       <div *ngIf="edit_mini_comp">
-        <p>I need to know what info is used for each employee to do this</p>
-        
+        <form [formGroup] = "updateDeRef" (ngSubmit) = "updateProfile()">
+            <label style = "font-weight: bold;">Name: </label><span>{{e_firstn}}{{e_lastn}}</span><br/>
+            <label style = "font-weight: bold;">EmployeeID: </label><span>{{e_id}}</span><br/>
+            <label style = "font-weight: bold;">Email: </label><span>{{e_email}}</span>
+            <input type="button" value="change" (click) = "changeEmail()"><span *ngIf = "change_email"><input type="text" required></span><br/>
+            <label style = "font-weight: bold;">Password: </label><input style = "border:0"type="password" value = "{{e_password}}" disabled>
+            <input type="button" value="change" (click) = "changePassword()"><span *ngIf = "change_password"><input type="text" required></span><br/>
+            <input type="submit" value="Submit">
+        </form>
       </div>
     </div>
   </div>

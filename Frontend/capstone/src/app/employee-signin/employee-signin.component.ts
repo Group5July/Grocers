@@ -25,14 +25,14 @@ export class EmployeeSigninComponent implements OnInit {
     // this.signinSer.checkLoginDetails(login).
     // subscribe(result=>{
     //   if(result=="Success"){
-    //     //this.router.navigate(["home",login.email]);
-        this.router.navigate(["employee-dashboard"/*,login.email*/])
-  //     }else {
-  //         this.msg = result;
-  //     }
-  //   },
-  //   error=>console.log(error));
-  //   this.signinRef.reset();
+        //this.router.navigate(["home",login.email]);
+        this.router.navigate(["employee-dashboard","1345"/*,login.employeeID*/])
+    //   }else {
+    //       this.msg = result;
+    //   }
+    // },
+    // error=>console.log(error));
+    // this.signinRef.reset();
    }
 
 }
