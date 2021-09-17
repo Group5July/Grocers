@@ -9,6 +9,7 @@ export class Employee{
         public employeePassword?:string,
         public emailID?:string,
         public firstName?:string,
-        public lastName?:string
+        public lastName?:string,
+        
         ){}
 }
