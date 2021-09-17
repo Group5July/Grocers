@@ -11,8 +11,8 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 
 const routes: Routes = [
   {path:"signin", component:EmployeeSigninComponent},
-  //{path:"employee-dashboard/:user", component:EmployeeDashboardComponent},
-  {path:"employee-dashboard", component:EmployeeDashboardComponent}, //for testing
+  {path:"employee-dashboard/:employeeID", component:EmployeeDashboardComponent},
+  //{path:"employee-dashboard", component:EmployeeDashboardComponent}, //for testing
   {path:"admin-dashboard", component:AdminDashboardComponent}, //for testing
   {path:"admin-signin", component:AdminSigninComponent},
   {path:"user-signin",component:UserSigninComponent},
